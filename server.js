@@ -10,10 +10,6 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/form', (req, res) => {
-  res.render('form');
-});
-
 app.post('/', (req, res) => {
   console.log(req.body);
   res.send(`<h2>Thanks, ${req.body.name}! Your message has been received.</h2>`);
