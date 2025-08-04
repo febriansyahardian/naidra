@@ -130,9 +130,22 @@
     };
 
     const toggleDark = document.getElementById("toggleDark");
-    toggleDark.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
-    });
+
+// Cek apakah sebelumnya udah disimpan dark mode atau belum
+if (localStorage.getItem("theme") === "dark") {
+  document.documentElement.classList.add("dark");
+}
+
+toggleDark.addEventListener("click", () => {
+  const htmlEl = document.documentElement;
+  if (htmlEl.classList.contains("dark")) {
+    htmlEl.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  } else {
+    htmlEl.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  }
+});
 
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
