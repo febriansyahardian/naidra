@@ -1,26 +1,18 @@
 const express = require('express');
-const path = require('path'); // <--- ini penting
+const path = require('path'); // Tambahan penting
 const app = express();
-const port = process.env.PORT || 3000; // untuk Vercel, pakai port dari environment
+const port = process.env.PORT || 3000;
 
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+// 🟢 Serve file static dari folder 'public'
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Set path views secara eksplisit
+// 🟢 Setup EJS dan views folder
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// 🔵 Routes
 app.get('/', (req, res) => {
   res.render('index');
-});
-
-app.get('/form', (req, res) => {
-  res.render('form');
-});
-
-app.post('/', (req, res) => {
-  console.log(req.body);
-  res.send(`<h2>Thanks, ${req.body.name}! Your message has been received.</h2>`);
 });
 
 app.listen(port, () => {
