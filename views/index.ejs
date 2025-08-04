@@ -122,7 +122,14 @@
     closeBtn.onclick = () => {  
       modal.classList.add("hidden");  
     };  
-  
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    modal.classList.add("hidden");
+  }
+});
+
+
     seeMoreBtn.onclick = () => {  
       morePhotos.forEach(photo => photo.classList.remove("hidden"));  
       seeMoreBtn.classList.add("hidden");  
