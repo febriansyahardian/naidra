@@ -26,7 +26,7 @@
         <button id="menuToggle" class="block md:hidden text-xl">
           <i class="fas fa-bars"></i>
         </button>
-        <nav id="navMenu" class="hidden md:flex md:flex-row md:items-center gap-4 font-semibold text-base sm:text-lg flex-col absolute top-full right-4 bg-white dark:bg-gray-800 shadow-md md:shadow-none md:static md:bg-transparent md:dark:bg-transparent rounded-md px-6 py-3 z-50 transition-all duration-300 ease-in-out absolute top-15 right-0 ">
+        <nav id="navMenu" class="hidden md:flex md:flex-row md:items-center gap-4 font-semibold text-base sm:text-lg flex-col absolute top-full right-4 bg-white shadow-md md:shadow-none md:static md:bg-transparent rounded-md px-6 py-3 z-50 transition-all duration-300 ease-in-out absolute top-15 right-0 ">
           <a href="#hero" class=" p-2 block w-full hover:bg-gray-200">Home</a>
           <a href="#photography" class=" p-2 block w-full hover:bg-gray-200">Photography</a>
           <a href="#design" class=" p-2 block w-full hover:bg-gray-200">Design</a>
@@ -37,7 +37,7 @@
     </div>
   </header>
 
-  <section id="hero" class="py-14 sm:py-20 bg-white dark:bg-gray-800">
+  <section id="hero" class="py-14 sm:py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:grid md:grid-cols-2 items-center gap-6 md:gap-10">
       <img src="/img/image.jpg" class="rounded-lg w-40 sm:w-52 md:w-64 shadow-md mx-auto md:ml-32" />
       <div class="space-y-4 text-center md:text-left">
@@ -126,25 +126,7 @@
     seeMoreBtn.onclick = () => {
       morePhotos.forEach(photo => photo.classList.remove("hidden"));
       seeMoreBtn.classList.add("hidden");
-    };
-
-    const toggleDark = document.getElementById("toggleDark");
-
-// Cek apakah sebelumnya udah disimpan dark mode atau belum
-if (localStorage.getItem("theme") === "dark") {
-  document.documentElement.classList.add("dark");
-}
-
-toggleDark.addEventListener("click", () => {
-  const htmlEl = document.documentElement;
-  if (htmlEl.classList.contains("dark")) {
-    htmlEl.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  } else {
-    htmlEl.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  }
-});
+  });
 
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
