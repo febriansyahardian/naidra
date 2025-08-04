@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "npx tailwindcss -i ./src/input.css -o ./public/styles.css --watch & nodemon server.js"
+    "dev": "npx tailwindcss -i ./src/input.css -o ./public/styles.css --watch & nodemon server.js",
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/styles.css --minify"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.0",
@@ -16,14 +17,5 @@
   "dependencies": {
     "ejs": "^3.1.0",
     "express": "^4.21.2"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
-}
-"scripts": {
-  "start": "node server.js",
-  "dev": "npx tailwindcss -i ./src/input.css -o ./public/styles.css --watch & nodemon server.js",
-  "build": "npx tailwindcss -i ./src/input.css -o ./public/styles.css --minify"
+  }
 }
