@@ -22,3 +22,8 @@
   "license": "ISC",
   "description": ""
 }
+"scripts": {
+  "start": "node server.js",
+  "dev": "npx tailwindcss -i ./src/input.css -o ./public/styles.css --watch & nodemon server.js",
+  "build": "npx tailwindcss -i ./src/input.css -o ./public/styles.css --minify"
+}
