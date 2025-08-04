@@ -1,0 +1,24 @@
+{
+  "name": "tailwind-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./public/styles.css --watch & nodemon server.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.0",
+    "autoprefixer": "^10.4.0",
+    "nodemon": "^2.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.0.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.0",
+    "express": "^4.21.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
