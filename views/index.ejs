@@ -119,23 +119,22 @@
       });
     });
 
-    closeBtn.onclick = () => {
-      modal.classList.add("hidden");
-    };
+    closeBtn.onclick = () => {  
+      modal.classList.add("hidden");  
+    };  
+  
+    seeMoreBtn.onclick = () => {  
+      morePhotos.forEach(photo => photo.classList.remove("hidden"));  
+      seeMoreBtn.classList.add("hidden");  
+    };  
 
-    seeMoreBtn.onclick = () => {
-      morePhotos.forEach(photo => photo.classList.remove("hidden"));
-      seeMoreBtn.classList.add("hidden");
-  });
-
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
-
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("hidden");
-    });
-
-  </script>
-<script src="https://cdn.tailwindcss.com"></script>
-</body>
+  
+    const menuToggle = document.getElementById("menuToggle");  
+    const navMenu = document.getElementById("navMenu");  
+  
+    menuToggle.addEventListener("click", () => {  
+      navMenu.classList.toggle("hidden");  
+    });  
+  
+  </script>  <script src="https://cdn.tailwindcss.com"></script>  </body>  
 </html>
