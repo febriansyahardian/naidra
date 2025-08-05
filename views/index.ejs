@@ -123,8 +123,9 @@
       modal.classList.add("hidden");  
     };  
 
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
+window.addEventListener('click', function (e) {
+  // Kalo klik di luar gambar dan bukan tombol close
+  if (e.target === modal) {
     modal.classList.add("hidden");
   }
 });
